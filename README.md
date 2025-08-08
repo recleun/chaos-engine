@@ -1,5 +1,15 @@
 # chaos-engine
 
+<div align="center">
+
+[![License](https://img.shields.io/crates/l/chaos-engine)](https://crates.io/crates/chaos-engine)
+[![crates.io](https://img.shields.io/crates/v/chaos-engine)](https://crates.io/crates/chaos-engine)
+[![Downloads](https://img.shields.io/crates/d/chaos-engine)](https://crates.io/crates/chaos-engine)
+[![docs.rs](https://img.shields.io/docsrs/chaos-engine)](https://docs.rs/chaos-engine)
+[![Rustfmt](https://img.shields.io/badge/style-rustfmt-ff69b4)](https://github.com/rust-lang/rustfmt)
+
+</div>
+
 The ChaosEngine is a useful library that helps CLI-based projects that actively take input from the user to perform actions, which is suitable for text-based games in terminals.
 
 The way it works is you create a few Page instances, which would contain the text to be displayed by the program, then at the bottom the user would have to give some text input. All inputs made by the user must be handled by you, where you could exit the program/display a new page (like progressing in a story), start a mini-game on a different page, etc.
