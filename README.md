@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/crates/l/chaos-engine)](https://crates.io/crates/chaos-engine)
 [![crates.io](https://img.shields.io/crates/v/chaos-engine)](https://crates.io/crates/chaos-engine)
 [![Downloads](https://img.shields.io/crates/d/chaos-engine)](https://crates.io/crates/chaos-engine)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/recleun/chaos-engine/rust.yml)
 [![docs.rs](https://img.shields.io/docsrs/chaos-engine)](https://docs.rs/chaos-engine)
 [![Rustfmt](https://img.shields.io/badge/style-rustfmt-ff69b4)](https://github.com/rust-lang/rustfmt)
 
