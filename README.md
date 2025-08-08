@@ -12,6 +12,7 @@ ChaosEngine includes a few useful features, including:
 - Ability to create different pages to easily print whichever one you want depending on your logic.
 
 ## Example Usage
+Note: Do not be overwhelmed by how big this example is, it's just comments that explain the code. Just 21 lines of code if you exclude the comments.
 
 ```rs
 use chaos_engine::{Chaos, ChaosOptions, Page, types::Vector2}
