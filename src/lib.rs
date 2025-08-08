@@ -22,8 +22,8 @@
 //! Basic usage of ChaosEngine to display a hello world page, taking user input and creating a very
 //! simple exit command.
 //!
-//! ```
-//! use chaos_engine::{Chaos, ChaosOptions, Page, types::Vector2}
+//! ```no_run
+//! use chaos_engine::{Chaos, ChaosOptions, Page, types::Vector2};
 //!
 //! fn main() {
 //!     let stdout = std::io::stdout();
@@ -31,7 +31,7 @@
 //!     // These are needed options to customize how your program will look.
 //!     let options = ChaosOptions::new(
 //!         // The input label, what text the user will see at the bottom right before the input.
-//!         String::from("Input: "),
+//!         "Input: ",
 //!         // The X and Y paddings for the input line.
 //!         // X would be how many spaces to the left of the input label.
 //!         Vector2::new(1, 1),

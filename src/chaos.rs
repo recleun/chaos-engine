@@ -12,10 +12,12 @@ use std::io::{self, Write};
 ///
 /// # Examples
 ///
-/// ```
+/// ```no_run
+/// use chaos_engine::{Chaos, ChaosOptions, types::Vector2};
+///
 /// let stdout = std::io::stdout();
 /// let options = ChaosOptions::new(
-///     String::from("Input: "), // The input label
+///     "Input: ", // The input label
 ///     Vector2::new(1, 1), // Input paddings (bottom line where input is written)
 ///     Vector2::new(4, 2), // Buffer paddings (main text output area)
 /// );
@@ -73,7 +75,19 @@ impl<'a> Chaos<'a> {
     ///
     /// # Examples
     ///
-    /// ```
+    /// ```no_run
+    /// use chaos_engine::{Chaos, ChaosOptions, Page, types::Vector2};
+    ///
+    /// let mut page = Page::new();
+    /// let mut chaos = Chaos::new(
+    ///     std::io::stdout(),
+    ///     ChaosOptions::new(
+    ///         "Input: ",
+    ///         Vector2::new(0, 0),
+    ///         Vector2::new(0, 0),
+    ///     )
+    /// );
+    ///
     /// loop {
     ///     chaos.clear_terminal();
     ///     chaos.print(&mut page);
@@ -259,8 +273,10 @@ impl<'a> Chaos<'a> {
 /// # Examples
 ///
 /// ```
+/// use chaos_engine::{ChaosOptions, types::Vector2};
+///
 /// let options = ChaosOptions::new(
-///     String::from("Input: "), // The input label
+///     "Input: ", // The input label
 ///     Vector2::new(1, 1), // Input paddings (bottom line where input is written)
 ///     Vector2::new(4, 2), // Buffer paddings (main text output area)
 /// );

@@ -5,8 +5,10 @@ use crate::Chaos;
 ///
 /// # Examples
 ///
-/// ```
-/// let page = Page::new();
+/// ```no_run
+/// use chaos_engine::Page;
+///
+/// let mut page = Page::new();
 /// page.push("hello, world!");
 /// ```
 #[derive(Debug, PartialEq, Eq)]
