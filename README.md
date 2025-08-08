@@ -85,3 +85,7 @@ fn main() {
     }
 }
 ```
+
+## Related Projects
+
+[chaos-engine-contain](https://crates.io/crates/chaos-engine-contain) - A really useful binary crate where you can containerize your ChaosEngine program, and reload it in-place by exiting the program with a specific exit code.
