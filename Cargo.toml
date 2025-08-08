@@ -1,5 +1,9 @@
 [package]
 name = "chaos-engine"
+description = "A rust crate to develop text-based games for terminals."
+license = "MIT"
+repository = "https://github.com/recleun/chaos-engine"
+documentation = "https://docs.rs/chaos-engine"
 version = "0.1.0"
 edition = "2024"
 
