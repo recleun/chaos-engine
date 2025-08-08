@@ -1,4 +1,4 @@
-# chaos-engine
+![Logo](assets/logo.png)
 
 <div align="center">
 
@@ -10,6 +10,8 @@
 [![docs.rs](https://img.shields.io/docsrs/chaos-engine?style=square)](https://docs.rs/chaos-engine)
 
 </div>
+
+# chaos-engine
 
 The ChaosEngine is a useful library that helps CLI-based projects that actively take input from the user to perform actions, which is suitable for text-based games in terminals.
 
