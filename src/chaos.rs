@@ -16,11 +16,7 @@ use std::io::{self, Write};
 /// use chaos_engine::{Chaos, ChaosOptions, types::Vector2};
 ///
 /// let stdout = std::io::stdout();
-/// let options = ChaosOptions::new(
-///     "Input: ", // The input label
-///     Vector2::new(1, 1), // Input paddings (bottom line where input is written)
-///     Vector2::new(4, 2), // Buffer paddings (main text output area)
-/// );
+/// let options = ChaosOptions::default();
 ///
 /// let mut chaos = Chaos::new(stdout, options);
 /// ```
@@ -76,17 +72,10 @@ impl<'a> Chaos<'a> {
     /// # Examples
     ///
     /// ```no_run
-    /// use chaos_engine::{Chaos, ChaosOptions, Page, types::Vector2};
+    /// use chaos_engine::{Chaos, ChaosOptions, Page};
     ///
     /// let mut page = Page::new();
-    /// let mut chaos = Chaos::new(
-    ///     std::io::stdout(),
-    ///     ChaosOptions::new(
-    ///         "Input: ",
-    ///         Vector2::new(0, 0),
-    ///         Vector2::new(0, 0),
-    ///     )
-    /// );
+    /// let mut chaos = Chaos::new(std::io::stdout(), ChaosOptions::default());
     ///
     /// loop {
     ///     chaos.clear_terminal();
@@ -275,11 +264,11 @@ impl<'a> Chaos<'a> {
 /// ```
 /// use chaos_engine::{ChaosOptions, types::Vector2};
 ///
-/// let options = ChaosOptions::new(
-///     "Input: ", // The input label
-///     Vector2::new(1, 1), // Input paddings (bottom line where input is written)
-///     Vector2::new(4, 2), // Buffer paddings (main text output area)
-/// );
+/// let options = ChaosOptions {
+///     input_label: "Input:", // The input label
+///     input_padding: Vector2::new(1, 1), // Input paddings (bottom line where input is written)
+///     buffer_padding: Vector2::new(4, 2), // Buffer paddings (main text output area)
+/// };
 /// ```
 pub struct ChaosOptions<'a> {
     pub input_padding: Vector2<u16>,

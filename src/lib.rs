@@ -29,17 +29,18 @@
 //!     let stdout = std::io::stdout();
 //!
 //!     // These are needed options to customize how your program will look.
-//!     let options = ChaosOptions::new(
+//!     let options = ChaosOptions {
 //!         // The input label, what text the user will see at the bottom right before the input.
-//!         "Input: ",
-//!         // The X and Y paddings for the input line.
-//!         // X would be how many spaces to the left of the input label.
-//!         Vector2::new(1, 1),
+//!         input_label: "Input:",
 //!         // The X and Y paddings for the main text output section (buffer).
 //!         // X gets split into left and right (4 each), and Y is how many spaces from the top the text
 //!         // will have.
-//!         Vector2::new(8, 2)
-//!     );
+//!         buffer_padding: Vector2::new(8, 2),
+//!         // ChaosOptions provide default values, and this would use the default X and Y paddings for
+//!         // the input line.
+//!         // X would be how many spaces to the left of the input label.
+//!         ..Default::default()
+//!     };
 //!
 //!     // Instantiate chaos, passing the needed stdout and options.
 //!     // This is mostly what you will work with, whether it be printing pages, taking input, etc.
