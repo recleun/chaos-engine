@@ -287,22 +287,12 @@ pub struct ChaosOptions<'a> {
     pub input_label: &'a str,
 }
 
-impl<'a> ChaosOptions<'a> {
-    /// There are currently no default values for `ChaosOptions`, they must be set manually.
-    ///
-    /// If the given X value for the buffer padding is an odd number, 1 will be added to it.
-    pub fn new(
-        input_label: &'a str,
-        input_padding: Vector2<u16>,
-        mut buffer_padding: Vector2<u16>,
-    ) -> Self {
-        if buffer_padding.x % 2 != 0 {
-            buffer_padding.x += 1;
-        }
-        Self {
-            input_label,
-            input_padding,
-            buffer_padding,
+impl<'a> Default for ChaosOptions<'a> {
+    fn default() -> Self {
+        ChaosOptions {
+            input_label: "Input:",
+            input_padding: Vector2::new(1, 0),
+            buffer_padding: Vector2::new(8, 2),
         }
     }
 }
