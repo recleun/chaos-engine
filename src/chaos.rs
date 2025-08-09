@@ -13,7 +13,7 @@ use std::io::{self, Write};
 /// # Examples
 ///
 /// ```no_run
-/// use chaos_engine::{Chaos, ChaosOptions, types::Vector2};
+/// use chaos_engine::{Chaos, ChaosOptions};
 ///
 /// let stdout = std::io::stdout();
 /// let options = ChaosOptions::default();
