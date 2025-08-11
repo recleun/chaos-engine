@@ -41,8 +41,8 @@ impl<'a> Chaos<'a> {
             dimensions: Self::get_dimensions(),
             position: Self::get_position(),
             paddings: ChaosPaddings {
-                input: Vector2::new(options.input_padding.x, options.input_padding.y),
-                buffer: Vector2::new(options.buffer_padding.x, options.buffer_padding.y),
+                input: options.input_padding,
+                buffer: options.buffer_padding,
             },
         }
     }
