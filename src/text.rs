@@ -36,6 +36,11 @@ impl Page {
         self.raw_text.pop()
     }
 
+    /// Clear all raw text from the page.
+    pub fn clear(&mut self) {
+        self.raw_text = Vec::new();
+    }
+
     /// Get the stored aligned text.
     ///
     /// Aligned text puts paddings and word-wrapping into consideration.
