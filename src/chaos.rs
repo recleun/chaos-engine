@@ -255,6 +255,20 @@ impl<'a> Chaos<'a> {
             PaddingType::Buffer => self.paddings.buffer = new_padding,
         }
     }
+
+    #[cfg(feature = "test")]
+    pub fn test_setup(options: ChaosTestOptions<'a>) -> Self {
+        Self {
+            stdout: options.stdout,
+            input_label: options.input_label,
+            dimensions: options.dimensions,
+            position: options.position,
+            paddings: ChaosPaddings {
+                input: options.input_padding,
+                buffer: options.buffer_padding,
+            },
+        }
+    }
 }
 
 /// A helper struct to set some options for a [`Chaos`] instance.
@@ -284,6 +298,16 @@ impl<'a> Default for ChaosOptions<'a> {
             buffer_padding: Vector2::new(8, 2),
         }
     }
+}
+
+#[cfg(feature = "test")]
+pub struct ChaosTestOptions<'a> {
+    pub stdout: std::io::Stdout,
+    pub input_label: &'a str,
+    pub dimensions: Vector2<u16>,
+    pub position: Vector2<u16>,
+    pub input_padding: Vector2<u16>,
+    pub buffer_padding: Vector2<u16>,
 }
 
 /// A struct that stores paddings for the input and buffer sections of the terminal.
