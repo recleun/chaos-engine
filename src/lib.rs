@@ -81,6 +81,11 @@
 //!     }
 //! }
 //! ```
+//!
+//! ## Features
+//!
+//! There is only one feature named `test`, and it's only there to help with writing integrated
+//! tests for the crate.
 
 pub mod chaos;
 pub mod text;
