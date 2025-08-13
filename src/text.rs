@@ -14,7 +14,7 @@ use crate::Chaos;
 #[derive(Debug, PartialEq, Eq)]
 pub struct Page {
     text: Vec<String>,
-    raw_text: Vec<String>,
+    raw_text: Vec<Line>,
 }
 
 impl Page {
@@ -28,11 +28,23 @@ impl Page {
 
     /// Push some string to the page. Each push will start on its own line.
     pub fn push(&mut self, text: &str) {
-        self.raw_text.push(text.to_string());
+        self.raw_text.push(Line::new(text, None));
+    }
+
+    pub fn push_aligned(&mut self, text: &str, alignment: TextAlignment) {
+        match alignment {
+            TextAlignment::Left => self.push(text),
+            TextAlignment::Center => {
+                todo!();
+            },
+            TextAlignment::Right => {
+                todo!();
+            },
+        }
     }
 
     /// Pop the last string pushed to the page.
-    pub fn pop(&mut self) -> Option<String> {
+    pub fn pop(&mut self) -> Option<Line> {
         self.raw_text.pop()
     }
 
@@ -49,7 +61,7 @@ impl Page {
     }
 
     /// Get the stored raw text.
-    pub fn raw_text(&self) -> &Vec<String> {
+    pub fn raw_text(&self) -> &Vec<Line> {
         &self.raw_text
     }
 
@@ -64,8 +76,8 @@ impl Page {
         let dimensions = &chaos.dimensions();
         self.text = Vec::new();
 
-        for string in &self.raw_text {
-            let words: Vec<&str> = string.split_whitespace().collect();
+        for line in &self.raw_text {
+            let words: Vec<&str> = line.contents.split_whitespace().collect();
             let mut left_chars = dimensions.x as i32 - buffer_padding_x as i32;
             let mut line = String::new();
 
@@ -97,4 +109,26 @@ impl Page {
             self.text.push(line);
         }
     }
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct Line {
+    pub contents: String,
+    alignment: Option<TextAlignment>,
+}
+
+impl Line {
+    pub fn new(contents: &str, alignment: Option<TextAlignment>) -> Self {
+        Self {
+            contents: contents.to_string(),
+            alignment,
+        }
+    }
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum TextAlignment {
+    Left,
+    Center,
+    Right,
 }
